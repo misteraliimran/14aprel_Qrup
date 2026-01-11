@@ -1,13 +1,14 @@
 package lesson2;
 
 public class Main {
-    public static void main(String[] args) {
-        String ad = "Əliimran";
-        String soyad = "Əliyev";
-        int yas = 12;
+	 public static void main(String[] args) {
 
-        System.out.println("Ad: " + ad);
-        System.out.println("Soyad: " + soyad);
-        System.out.println("Yaş: " + yas);
-    }
-}
+	     Transport t1 = new Car();
+	     Transport t2 = new Bus();
+	     Transport t3 = new Bicycle();
+
+	     t1.move();
+	     t2.move();
+	     t3.move();
+	 }
+	}
