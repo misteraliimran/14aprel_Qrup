@@ -1,14 +1,14 @@
 package lesson2;
 
 public class Main {
-	 public static void main(String[] args) {
+    public static void main(String[] args) {
 
-	     Animal dog = new Dog();
-	     Animal cat = new Cat();
-	     Animal lion = new Lion();
+        Toy toy1 = new Toy("Maşın", 10);
+        System.out.println(toy1);
 
-	     dog.makeNoise();
-	     cat.makeNoise();
-	     lion.makeNoise();
-	 }
-	}
+        Toy toy2 = new Toy("Top", 5);
+        Toy toy3 = new Toy("Top", 5);
+
+        System.out.println(toy2.equals(toy3));
+    }
+}
