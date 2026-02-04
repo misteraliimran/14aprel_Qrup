@@ -1,16 +1,22 @@
 package lesson2;
 
 public class Main {
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) {
 
-        Player p1 = new Player("Ali", 100);
+        Box<Integer> intBox = new Box<>();
+        intBox.setValue(10);
+        System.out.println("Integer Box: " + intBox.getValue());
 
-        Player p2 = (Player) p1.clone();
+        Box<String> stringBox = new Box<>();
+        stringBox.setValue("Salam Java");
+        System.out.println("String Box: " + stringBox.getValue());
 
-        System.out.println("Orijinal hashCode: " + p1.hashCode());
-        System.out.println("Klon hashCode: " + p2.hashCode());
+        Box<Double> doubleBox = new Box<>();
+        doubleBox.setValue(25.5);
+        System.out.println("Double Box: " + doubleBox.getValue());
 
-        System.out.println("== ilə yoxlama: " + (p1 == p2));
-        System.out.println("equals ilə yoxlama: " + p1.equals(p2));
+        intBox.printElement("Test");
+        intBox.printElement(123);
+        intBox.printElement(3.14);
     }
 }
