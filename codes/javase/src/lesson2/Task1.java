@@ -5,16 +5,21 @@ import java.util.*;
 public class Task1 {
     public static void main(String[] args) {
 
-        List<Integer> numbers = new ArrayList<>();
+        int[] array = {1, 2, 3, 2, 4, 1, 5};
 
-        int num = 10;
-        while (numbers.size() < 40) {
-            if (num % 2 == 0) {
-                numbers.add(num);
-            }
-            num++;
+        Set<Integer> set = new HashSet<>();
+
+        for (int num : array) {
+            set.add(num);
         }
 
-        System.out.println(numbers);
+        int sum = 0;
+
+        for (int num : set) {
+            sum += num;
+        }
+
+        System.out.println("Təkrarsız ədədlər: " + set);
+        System.out.println("Cəm: " + sum);
     }
 }

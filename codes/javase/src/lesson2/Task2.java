@@ -5,16 +5,18 @@ import java.util.*;
 public class Task2 {
     public static void main(String[] args) {
 
-        List<String> words = new ArrayList<>();
-        words.add("Java");
-        words.add("Python");
-        words.add("C++");
-        words.add("JavaScript");
+        String text = "hello world";
 
-        System.out.println("Original list: " + words);
+        Set<Character> letters = new HashSet<>();
 
-        Collections.reverse(words);
+        for (char ch : text.toCharArray()) {
 
-        System.out.println("Reversed list: " + words);
+            if (Character.isLetter(ch)) {
+                letters.add(ch);
+            }
+        }
+
+        System.out.println("Fərqli hərflər: " + letters);
+        System.out.println("Fərqli hərflərin sayı: " + letters.size());
     }
 }
