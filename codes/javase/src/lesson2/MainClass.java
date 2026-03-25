@@ -1,15 +1,16 @@
 package lesson2;
 
-public class MainClass {
+import java.util.Stack;
 
+public class MainClass {
     public static void main(String[] args) {
 
-        CheckRange checkRange = new CheckRange();
+        Stack<String> stack = new Stack<>();
 
-        try {
-            checkRange.checkValueRange(5); 
-        } catch (OutOfRangeValueException e) {
-            System.out.println(e.getMessage());
-        }
+        stack.push("Aysel");
+        stack.push("Murad");
+        stack.push("Leyla");
+
+        System.out.println("Ən son əlavə edilən element: " + stack.peek());
     }
 }
