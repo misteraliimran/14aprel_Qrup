@@ -1,16 +1,17 @@
 package lesson2;
 
-import java.util.Stack;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class MainClass {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Stack<String> stack = new Stack<>();
+		LocalDateTime zamanMelumati = LocalDateTime.now();
 
-        stack.push("Aysel");
-        stack.push("Murad");
-        stack.push("Leyla");
+		DateTimeFormatter tarixFormati = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-        System.out.println("Ən son əlavə edilən element: " + stack.peek());
-    }
+		String formatlanmisZaman = zamanMelumati.format(tarixFormati);
+
+		System.out.println("Formatlanmis tarix: " + formatlanmisZaman);
+	}
 }
