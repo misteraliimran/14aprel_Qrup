@@ -1,25 +1,15 @@
 package lesson2;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Task1 {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("String daxil et: ");
+		String input = sc.nextLine();
 
-        int[] array = {1, 2, 3, 2, 4, 1, 5};
+		boolean result = input.matches("[0-9]+");
 
-        Set<Integer> set = new HashSet<>();
-
-        for (int num : array) {
-            set.add(num);
-        }
-
-        int sum = 0;
-
-        for (int num : set) {
-            sum += num;
-        }
-
-        System.out.println("Təkrarsız ədədlər: " + set);
-        System.out.println("Cəm: " + sum);
-    }
+		System.out.println(result);
+	}
 }
