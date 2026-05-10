@@ -1,26 +1,19 @@
 package az.developia.spring_project_14aprel;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainApp {
 
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-		Person p = (Person) context.getBean("person");
+		Home home1 = context.getBean(Home.class);
+		System.out.println(home1);
 
-		System.out.println("ID: " + p.getId());
-		System.out.println("Name: " + p.getName());
-		System.out.println("Age: " + p.getAge());
-		System.out.println("Salary: " + p.getSalary());
+		Home home2 = context.getBean(Home.class);
+		System.out.println(home2);
 
-		String[] beans = context.getBeanDefinitionNames();
-
-		System.out.println("\nBütün bean-lər:");
-		for (String bean : beans) {
-			System.out.println(bean);
-		}
+		context.close();
 	}
 }
