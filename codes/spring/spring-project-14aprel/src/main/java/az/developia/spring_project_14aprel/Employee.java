@@ -45,4 +45,14 @@ public class Employee {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
+	public void setComputer(Computer computer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object getComputer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

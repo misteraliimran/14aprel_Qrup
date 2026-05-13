@@ -15,6 +15,6 @@ public class Main {
 		System.out.println("Age: " + employee.getAge());
 		System.out.println("Salary: " + employee.getSalary());
 
-		System.out.println("Computer Brand: " + employee.getComputer().getBrand());
+//		System.out.println("Computer Brand: " + ((Object) employee.getComputer()).getBrand());
 	}
 }
