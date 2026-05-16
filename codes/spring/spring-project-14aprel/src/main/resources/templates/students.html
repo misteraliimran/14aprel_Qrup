@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Students</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form action="/add" method="post">
+
+    Name:
+    <input type="text" name="name">
+
+    <br><br>
+
+    Surname:
+    <input type="text" name="surname">
+
+    <br><br>
+
+    Grade:
+    <input type="number" name="grade">
+
+    <br><br>
+
+    <button type="submit">Add Student</button>
+
+</form>
+
+<hr>
+
+<h2>Students Table</h2>
+
+<table>
+
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Grade</th>
+    </tr>
+
+    <tr th:each="s : ${students}">
+        <td th:text="${s.name}"></td>
+        <td th:text="${s.surname}"></td>
+        <td th:text="${s.grade}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
