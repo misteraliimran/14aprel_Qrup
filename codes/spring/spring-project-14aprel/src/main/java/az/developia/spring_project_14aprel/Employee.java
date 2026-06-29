@@ -1,5 +1,7 @@
 package az.developia.spring_project_14aprel;
 
+import az.developia.spring_project_14aprel.entity.Computer;
+
 public class Employee {
 
     private int id;

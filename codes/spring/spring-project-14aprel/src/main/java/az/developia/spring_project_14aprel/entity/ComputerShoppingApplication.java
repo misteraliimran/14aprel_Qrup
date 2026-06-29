@@ -1,4 +1,4 @@
-package az.developia.spring_project_14aprel.ComputerShopping;
+package az.developia.spring_project_14aprel.entity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
