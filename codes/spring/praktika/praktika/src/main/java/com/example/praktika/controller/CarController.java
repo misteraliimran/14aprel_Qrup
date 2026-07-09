@@ -1,21 +1,22 @@
 package com.example.praktika.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
+import com.example.praktika.requestDto.CarRequestDto;
 import com.example.praktika.service.CarService;
 
-import az.developia.spring_project_14aprel.service.UserService;
-
-@Controller
+@RestController
+@RequestMapping("/cars")
 public class CarController {
-	@Autowired
-	private CarService carService;
 
-    @GetMapping("/cars")
-    public String CarPage() {
-        return "car";
+    @Autowired
+    private CarService carService;
+
+    @PostMapping
+    public String addCar(@RequestBody CarRequestDto carRequestDto) {
+        carService.addCar(carRequestDto);
+        return "Car added successfully";
     }
 
 }
