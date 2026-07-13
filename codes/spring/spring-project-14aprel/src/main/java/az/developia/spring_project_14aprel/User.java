@@ -1,5 +1,6 @@
 package az.developia.spring_project_14aprel;
 
+import az.developia.spring_project_14aprel.entity.Order;
 import jakarta.persistence.*;
 
 @Entity
@@ -66,4 +67,14 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+	public void setLastName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addOrder(Order order3) {
+		// TODO Auto-generated method stub
+		
+	}
 }

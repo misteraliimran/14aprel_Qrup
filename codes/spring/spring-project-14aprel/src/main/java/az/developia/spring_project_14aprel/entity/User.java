@@ -1,13 +1,16 @@
 package az.developia.spring_project_14aprel.entity;
 
-import jakarta.persistence.*;
-import jakarta.persistence.criteria.Order;
-import lombok.Data;
+import java.util.ArrayList;
 import java.util.List;
 
-@Data
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
 @Entity
-@Table(name = "users")
 public class User {
 
     @Id
@@ -15,17 +18,17 @@ public class User {
     private Integer id;
 
     private String firstName;
-
     private String lastName;
-
-    @Column(unique = true)
     private String username;
-
     private String password;
-
-    @Column(unique = true)
     private String email;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Order> orders;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order> orders = new ArrayList<>();
+
+    public void addOrder(Order order) {
+        orders.add(order);
+        order.setUser(this);
+    }
+ 
 }

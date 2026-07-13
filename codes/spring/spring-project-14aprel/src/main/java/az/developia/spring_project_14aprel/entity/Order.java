@@ -1,12 +1,14 @@
 package az.developia.spring_project_14aprel.entity;
 
-import jakarta.persistence.*;
-import lombok.Data;
 import java.time.LocalDate;
 
-@Data
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
 @Entity
-@Table(name = "orders")
 public class Order {
 
     @Id
@@ -14,12 +16,30 @@ public class Order {
     private Integer id;
 
     private LocalDate orderDate;
-
     private Double totalPrice;
-
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
+
+	public void setTotalPrice(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setOrderDate(LocalDate now) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setStatus(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setUser(User user2) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
