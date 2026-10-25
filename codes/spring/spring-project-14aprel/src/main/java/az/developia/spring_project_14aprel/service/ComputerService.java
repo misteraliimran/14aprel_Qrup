@@ -1,5 +1,7 @@
 package az.developia.spring_project_14aprel.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,5 +22,25 @@ public class ComputerService {
 		Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy).ascending());
 
 		return computerRepository.findAll(pageable);
+	}
+
+	public Computer getById(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Computer> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Computer add(Computer computer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void delete(Integer id) {
+		// TODO Auto-generated method stub
+		
 	}
 }

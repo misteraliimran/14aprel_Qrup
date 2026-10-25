@@ -3,5 +3,5 @@ package az.developia.spring_project_14aprel.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import az.developia.spring_project_14aprel.entity.Computer;
 
-public interface ComputerRepository extends JpaRepository<Computer, Long> {
+public interface ComputerRepository extends JpaRepository<Computer, Integer> {
 }

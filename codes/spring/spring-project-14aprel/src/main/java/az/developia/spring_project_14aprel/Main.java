@@ -1,20 +1,26 @@
 package az.developia.spring_project_14aprel;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
+    public static void main(String[] args) {
 
-	public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-		Employee employee = context.getBean(Employee.class);
+        List<Integer> evenNumbers = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .collect(Collectors.toList());
 
-		System.out.println("ID: " + employee.getId());
-		System.out.println("Name: " + employee.getName());
-		System.out.println("Age: " + employee.getAge());
-		System.out.println("Salary: " + employee.getSalary());
+        System.out.println(evenNumbers);
 
-//		System.out.println("Computer Brand: " + ((Object) employee.getComputer()).getBrand());
-	}
+        List<String> names = Arrays.asList("Aliimran", "Murad", "Nailya", "Leyla");
+
+        List<String> upperNames = names.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+
+        System.out.println(upperNames);
+    }
 }
